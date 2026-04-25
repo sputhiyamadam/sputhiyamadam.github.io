@@ -1,0 +1,484 @@
+/* =============================================
+   Sreedevi Puthiyamadam Vasu – Academic Portfolio
+   ============================================= */
+
+/* ---------- Reset & Base ---------- */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --green:    #2e7d5e;
+  --green-dk: #1d5c44;
+  --green-lt: #e6f4ef;
+  --blue:     #1a3a5c;
+  --accent:   #c0392b;
+  --text:     #333;
+  --muted:    #666;
+  --border:   #dce8e2;
+  --bg:       #f5faf7;
+  --white:    #ffffff;
+  --shadow:   0 2px 12px rgba(0,0,0,.08);
+  --radius:   8px;
+  --font-sans: 'Raleway', 'Segoe UI', Arial, sans-serif;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--font-sans);
+  font-size: 15px;
+  color: var(--text);
+  background: var(--bg);
+  line-height: 1.7;
+}
+
+a { color: var(--green); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+/* ---------- Google Font ---------- */
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700&display=swap');
+
+/* ---------- Layout ---------- */
+.container {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* ---------- Navigation ---------- */
+nav {
+  background: var(--green-dk);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 2px 6px rgba(0,0,0,.2);
+}
+
+nav .nav-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 54px;
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+nav .nav-brand {
+  color: var(--white);
+  font-weight: 700;
+  font-size: 1rem;
+  letter-spacing: .5px;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+nav ul li a {
+  color: rgba(255,255,255,.85);
+  font-size: .8rem;
+  font-weight: 500;
+  padding: 6px 10px;
+  border-radius: 4px;
+  transition: background .2s, color .2s;
+  letter-spacing: .3px;
+}
+
+nav ul li a:hover {
+  background: rgba(255,255,255,.15);
+  color: var(--white);
+  text-decoration: none;
+}
+
+/* ---------- Hero / Header ---------- */
+header.hero {
+  background: linear-gradient(135deg, var(--green-dk) 0%, var(--green) 60%, #3da070 100%);
+  color: var(--white);
+  padding: 72px 20px 60px;
+  text-align: center;
+}
+
+header.hero .avatar-circle {
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  background: rgba(255,255,255,.2);
+  border: 3px solid rgba(255,255,255,.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.8rem;
+  margin: 0 auto 20px;
+  color: var(--white);
+}
+
+header.hero h1 {
+  font-size: 2.2rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  margin-bottom: 6px;
+}
+
+header.hero h2 {
+  font-size: 1.1rem;
+  font-weight: 400;
+  opacity: .9;
+  margin-bottom: 28px;
+}
+
+.contact-pills {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+}
+
+.contact-pills a {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(255,255,255,.15);
+  color: var(--white);
+  border: 1px solid rgba(255,255,255,.35);
+  border-radius: 20px;
+  padding: 5px 14px;
+  font-size: .8rem;
+  font-weight: 500;
+  transition: background .2s;
+}
+
+.contact-pills a:hover {
+  background: rgba(255,255,255,.28);
+  text-decoration: none;
+}
+
+.contact-pills .pill-icon { font-size: .85rem; }
+
+/* ---------- Two-column layout ---------- */
+.layout {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 28px;
+  padding: 32px 20px;
+  max-width: 1080px;
+  margin: 0 auto;
+  align-items: start;
+}
+
+/* ---------- Sidebar ---------- */
+.sidebar {
+  position: sticky;
+  top: 70px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.card {
+  background: var(--white);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+}
+
+.card-header {
+  background: var(--green);
+  color: var(--white);
+  font-size: .75rem;
+  font-weight: 700;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  padding: 10px 16px;
+}
+
+.card-body {
+  padding: 16px;
+}
+
+/* About mini */
+.card-body p { font-size: .82rem; color: var(--muted); line-height: 1.6; }
+
+/* Skills list */
+.skill-group { margin-bottom: 14px; }
+.skill-group:last-child { margin-bottom: 0; }
+.skill-group h4 { font-size: .78rem; color: var(--green-dk); font-weight: 700; margin-bottom: 6px; }
+.skill-group ul { list-style: none; }
+.skill-group ul li { font-size: .8rem; color: var(--muted); padding: 2px 0; }
+.skill-group ul li::before { content: "•  "; color: var(--green); }
+
+/* Specialization tags */
+.tag-cloud { display: flex; flex-wrap: wrap; gap: 6px; }
+.tag {
+  background: var(--green-lt);
+  color: var(--green-dk);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 3px 10px;
+  font-size: .72rem;
+  font-weight: 600;
+}
+
+/* ---------- Main content ---------- */
+.main-content {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+/* ---------- Sections ---------- */
+section {
+  background: var(--white);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+}
+
+.section-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--green-lt);
+  border-bottom: 2px solid var(--border);
+  padding: 14px 20px;
+}
+
+.section-header .section-icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: var(--green);
+  color: var(--white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: .9rem;
+  flex-shrink: 0;
+}
+
+.section-header h2 {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--blue);
+  text-transform: uppercase;
+  letter-spacing: .8px;
+}
+
+.section-body { padding: 20px; }
+
+/* ---------- Timeline (Degrees & Experience) ---------- */
+.timeline { list-style: none; }
+
+.timeline-item {
+  display: grid;
+  grid-template-columns: 90px 1fr;
+  gap: 0 16px;
+  margin-bottom: 24px;
+  position: relative;
+}
+
+.timeline-item:last-child { margin-bottom: 0; }
+
+.timeline-years {
+  text-align: right;
+  font-size: .78rem;
+  font-weight: 700;
+  color: var(--green);
+  padding-top: 3px;
+  position: relative;
+}
+
+.timeline-years::after {
+  content: '';
+  position: absolute;
+  right: -8px;
+  top: 7px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--green);
+  border: 2px solid var(--white);
+  box-shadow: 0 0 0 2px var(--green);
+}
+
+.timeline-content {
+  padding-left: 8px;
+  border-left: 2px solid var(--border);
+}
+
+.timeline-title {
+  font-weight: 700;
+  font-size: .95rem;
+  color: var(--blue);
+  margin-bottom: 2px;
+}
+
+.timeline-sub {
+  font-size: .82rem;
+  color: var(--green-dk);
+  font-weight: 600;
+  margin-bottom: 3px;
+}
+
+.timeline-location {
+  font-size: .78rem;
+  color: var(--muted);
+  margin-bottom: 5px;
+}
+
+.timeline-detail {
+  font-size: .8rem;
+  color: var(--muted);
+  line-height: 1.55;
+}
+
+.grade-badge {
+  display: inline-block;
+  background: var(--green-lt);
+  color: var(--green-dk);
+  border-radius: 10px;
+  font-size: .7rem;
+  font-weight: 700;
+  padding: 2px 8px;
+  margin-left: 6px;
+}
+
+/* ---------- Publications ---------- */
+.pub-list { list-style: none; }
+
+.pub-item {
+  padding: 14px 0;
+  border-bottom: 1px solid var(--border);
+  display: grid;
+  grid-template-columns: 28px 1fr;
+  gap: 0 10px;
+}
+
+.pub-item:last-child { border-bottom: none; }
+
+.pub-num {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: var(--green);
+  color: var(--white);
+  font-size: .7rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.pub-text { font-size: .85rem; color: var(--text); line-height: 1.6; }
+.pub-text strong { color: var(--blue); }
+.pub-text .doi-link { font-size: .78rem; color: var(--green); display: block; margin-top: 3px; }
+
+/* Under review / in prep badge */
+.pub-badge {
+  display: inline-block;
+  border-radius: 10px;
+  font-size: .68rem;
+  font-weight: 700;
+  padding: 2px 8px;
+  margin-top: 4px;
+}
+.badge-review { background: #fff3cd; color: #856404; }
+.badge-prep   { background: #d1ecf1; color: #0c5460; }
+
+/* ---------- Conference / Workshops ---------- */
+.conf-list { list-style: none; }
+
+.conf-item {
+  padding: 12px 0;
+  border-bottom: 1px solid var(--border);
+  display: grid;
+  grid-template-columns: 28px 1fr;
+  gap: 0 10px;
+}
+
+.conf-item:last-child { border-bottom: none; }
+
+.conf-icon {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: var(--green-lt);
+  color: var(--green);
+  font-size: .75rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.conf-text { font-size: .85rem; color: var(--text); line-height: 1.6; }
+.conf-text strong { color: var(--blue); }
+
+.conf-divider {
+  font-size: .75rem;
+  font-weight: 700;
+  color: var(--green);
+  text-transform: uppercase;
+  letter-spacing: .8px;
+  padding: 10px 0 4px;
+  border-bottom: 1px dashed var(--border);
+  margin-bottom: 4px;
+  grid-column: 1 / -1;
+}
+
+/* ---------- References ---------- */
+.ref-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 16px;
+}
+
+.ref-card {
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 16px;
+}
+
+.ref-card h3 { font-size: .9rem; color: var(--blue); margin-bottom: 4px; }
+.ref-card p  { font-size: .8rem; color: var(--muted); margin-bottom: 2px; }
+.ref-card a  { font-size: .8rem; color: var(--green); }
+
+/* ---------- Footer ---------- */
+footer {
+  background: var(--green-dk);
+  color: rgba(255,255,255,.75);
+  text-align: center;
+  padding: 22px 20px;
+  font-size: .8rem;
+  margin-top: 40px;
+}
+
+footer a { color: rgba(255,255,255,.9); }
+
+/* ---------- Responsive ---------- */
+@media (max-width: 780px) {
+  .layout {
+    grid-template-columns: 1fr;
+    padding: 20px 14px;
+  }
+
+  .sidebar { position: static; }
+
+  header.hero h1 { font-size: 1.6rem; }
+
+  .timeline-item {
+    grid-template-columns: 70px 1fr;
+  }
+
+  nav ul { gap: 2px; }
+  nav ul li a { font-size: .72rem; padding: 4px 7px; }
+}
