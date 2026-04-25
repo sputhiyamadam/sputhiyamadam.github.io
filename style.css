@@ -14,11 +14,16 @@
   --green-dk: #1d5c44;
   --green-lt: #e6f4ef;
   --blue:     #1a3a5c;
-  --accent:   #c0392b;
+
+  /* Updated palette (requested):
+     - Accent: deep ocean teal
+     - Background: soft blue tint
+  */
+  --accent:   #0B7285;
   --text:     #333;
   --muted:    #666;
   --border:   #dce8e2;
-  --bg:       #f5faf7;
+  --bg:       #F3F8FF;
   --white:    #ffffff;
   --shadow:   0 2px 12px rgba(0,0,0,.08);
   --radius:   8px;
@@ -35,7 +40,7 @@ body {
   line-height: 1.7;
 }
 
-a { color: var(--green); text-decoration: none; }
+a { color: var(--accent); text-decoration: none; }
 a:hover { text-decoration: underline; }
 
 /* ---------- Google Font ---------- */
@@ -211,7 +216,7 @@ header.hero h2 {
 .skill-group h4 { font-size: .78rem; color: var(--green-dk); font-weight: 700; margin-bottom: 6px; }
 .skill-group ul { list-style: none; }
 .skill-group ul li { font-size: .8rem; color: var(--muted); padding: 2px 0; }
-.skill-group ul li::before { content: "•  "; color: var(--green); }
+.skill-group ul li::before { content: "•  "; color: var(--accent); }
 
 /* Specialization tags */
 .tag-cloud { display: flex; flex-wrap: wrap; gap: 6px; }
@@ -253,7 +258,7 @@ section {
   width: 32px;
   height: 32px;
   border-radius: 50%;
-  background: var(--green);
+  background: var(--accent);
   color: var(--white);
   display: flex;
   align-items: center;
@@ -289,7 +294,7 @@ section {
   text-align: right;
   font-size: .78rem;
   font-weight: 700;
-  color: var(--green);
+  color: var(--accent);
   padding-top: 3px;
   position: relative;
 }
@@ -302,9 +307,9 @@ section {
   width: 10px;
   height: 10px;
   border-radius: 50%;
-  background: var(--green);
+  background: var(--accent);
   border: 2px solid var(--white);
-  box-shadow: 0 0 0 2px var(--green);
+  box-shadow: 0 0 0 2px var(--accent);
 }
 
 .timeline-content {
@@ -366,7 +371,7 @@ section {
   width: 24px;
   height: 24px;
   border-radius: 50%;
-  background: var(--green);
+  background: var(--accent);
   color: var(--white);
   font-size: .7rem;
   font-weight: 700;
@@ -379,7 +384,7 @@ section {
 
 .pub-text { font-size: .85rem; color: var(--text); line-height: 1.6; }
 .pub-text strong { color: var(--blue); }
-.pub-text .doi-link { font-size: .78rem; color: var(--green); display: block; margin-top: 3px; }
+.pub-text .doi-link { font-size: .78rem; color: var(--accent); display: block; margin-top: 3px; }
 
 /* Under review / in prep badge */
 .pub-badge {
@@ -410,8 +415,8 @@ section {
   width: 24px;
   height: 24px;
   border-radius: 50%;
-  background: var(--green-lt);
-  color: var(--green);
+  background: rgba(11,114,133,.12);
+  color: var(--accent);
   font-size: .75rem;
   display: flex;
   align-items: center;
@@ -426,7 +431,7 @@ section {
 .conf-divider {
   font-size: .75rem;
   font-weight: 700;
-  color: var(--green);
+  color: var(--accent);
   text-transform: uppercase;
   letter-spacing: .8px;
   padding: 10px 0 4px;
@@ -450,7 +455,7 @@ section {
 
 .ref-card h3 { font-size: .9rem; color: var(--blue); margin-bottom: 4px; }
 .ref-card p  { font-size: .8rem; color: var(--muted); margin-bottom: 2px; }
-.ref-card a  { font-size: .8rem; color: var(--green); }
+.ref-card a  { font-size: .8rem; color: var(--accent); }
 
 /* ---------- Footer ---------- */
 footer {
