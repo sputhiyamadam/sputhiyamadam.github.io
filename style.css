@@ -553,6 +553,21 @@ footer a { color: var(--white); text-decoration: underline; }
 }
 .highlight-details dd { font-size: .92rem; line-height: 1.65; color: var(--text); }
 
+.highlight-placeholder {
+  border: 1px dashed #9BB1C2;
+  background: #F3F8FC;
+  border-radius: 8px;
+  min-height: 140px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--muted);
+  font-size: .86rem;
+  font-weight: 600;
+  letter-spacing: .4px;
+  margin: 10px 0 14px;
+}
+
 /* Optional figure inside a highlight */
 .highlight-fig { margin: 12px 0 4px; }
 .highlight-fig img { max-width: 100%; height: auto; border-radius: 6px; border: 1px solid var(--border); }
