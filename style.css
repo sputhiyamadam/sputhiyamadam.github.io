@@ -244,6 +244,12 @@ header.hero h2 {
 
 .card-body { padding: 16px; }
 
+.scrollable-panel {
+  max-height: 220px;
+  overflow-y: auto;
+  scrollbar-gutter: stable;
+}
+
 .card-body p { font-size: .9rem; color: var(--muted); line-height: 1.6; }
 
 /* Skills */

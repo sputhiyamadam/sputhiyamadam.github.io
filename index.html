@@ -23,10 +23,10 @@
       <li><a href="#about">About</a></li>
       <li><a href="#education">Education</a></li>
       <li><a href="#experience">Experience</a></li>
-      <li><a href="#research-highlights">Research Highlights</a></li>
       <li><a href="#publications">Publications</a></li>
       <li><a href="#conferences">Conferences</a></li>
       <li><a href="#workshops">Workshops</a></li>
+      <li><a href="#research-highlights">Research Highlights</a></li>
     </ul>
   </div>
 </nav>
@@ -70,7 +70,7 @@
     <!-- About -->
     <div class="card">
       <div class="card-header">About Me</div>
-      <div class="card-body">
+      <div class="card-body scrollable-panel">
         <p>
           Oceanic &amp; Atmospheric researcher specializing in subseasonal-to-seasonal (S2S) precipitation
           predictability, with a focus on the Madden-Julian Oscillation (MJO) over the Maritime Continent (MC).
@@ -86,7 +86,7 @@
     <!-- Specializations -->
     <div class="card">
       <div class="card-header">Areas of Specialization</div>
-      <div class="card-body">
+      <div class="card-body scrollable-panel">
         <div class="tag-cloud">
           <span class="tag">Research &amp; Development</span>
           <span class="tag">MJO</span>
@@ -105,7 +105,7 @@
     <!-- Technical Skills -->
     <div class="card">
       <div class="card-header">Technical Skills</div>
-      <div class="card-body">
+      <div class="card-body scrollable-panel">
         <div class="skill-group">
           <h4>Programming &amp; Visualization</h4>
           <ul>
@@ -248,175 +248,6 @@
           </li>
 
         </ul>
-      </div>
-    </section>
-
-    <!-- RESEARCH HIGHLIGHTS -->
-    <section id="research-highlights">
-      <div class="section-header">
-        <div class="section-icon" aria-hidden="true"><i class="fa-solid fa-lightbulb"></i></div>
-        <h2>Research Highlights</h2>
-      </div>
-      <div class="section-body">
-        <p class="highlights-intro">
-          What I study, how I study it, and where each project stands. Papers and talks are listed under
-          Publications and Conference Presentations.
-        </p>
-
-        <article class="highlight">
-          <div class="highlight-head">
-            <h3>Soil moisture and the MJO over the Maritime Continent</h3>
-            <span class="pub-badge badge-review">Under review</span>
-          </div>
-          <div class="highlight-tags">
-            <span class="tag">SMAP</span><span class="tag">IMERG</span><span class="tag">GLEAM</span>
-            <span class="tag">ERA5-Land</span><span class="tag">RMM index</span>
-          </div>
-          <div class="highlight-placeholder" aria-label="Placeholder for project image">Image placeholder</div>
-          <dl class="highlight-details">
-            <dt>Question</dt>
-            <dd>How does soil moisture vary over the Maritime Continent from diurnal to intraseasonal time scales, and how does that variability relate to MJO rainfall?</dd>
-            <dt>Approach</dt>
-            <dd>Satellite soil moisture (SMAP) and precipitation (IMERG), combined with ERA5-Land and GLEAM products. Diagnostics include statistical, spectral, EOF, regression, lagged-correlation, and MJO-phase composites.</dd>
-            <dt>What I found</dt>
-            <dd>Soil moisture has strong intraseasonal variability linked to the MJO, with rainfall relationships that change by phase and environment. On diurnal scales, soil moisture peaks in early morning and declines through midday ahead of the afternoon rainfall peak, indicating antecedent soil moisture can shape convection timing and intensity.</dd>
-            <dt>Status</dt>
-            <dd>Submitted to <em>Journal of Geophysical Research: Atmospheres</em> (July 2026). Presented at the 105th AMS Annual Meeting, NCAR S2S Predictability Workshop, and RUBISCO Soil Moisture Working Group.</dd>
-          </dl>
-        </article>
-
-        <article class="highlight">
-          <div class="highlight-head">
-            <h3>Terrestrial evaporation and MJO propagation</h3>
-            <span class="pub-badge badge-prep">In development</span>
-          </div>
-          <div class="highlight-tags">
-            <span class="tag">GLEAM</span><span class="tag">MJO RMM indices</span><span class="tag">Regression diagnostics</span>
-          </div>
-          <div class="highlight-placeholder" aria-label="Placeholder for project image">Image placeholder</div>
-          <dl class="highlight-details">
-            <dt>Question</dt>
-            <dd>What roles do land evaporation and soil moisture play as the MJO propagates across the Maritime Continent, and do they act differently?</dd>
-            <dt>Approach</dt>
-            <dd>Evaporation variability from GLEAM is quantified and related to MJO convection by phase using regression and process-oriented diagnostics alongside soil moisture analyses.</dd>
-            <dt>What I found</dt>
-            <dd>Evaporation and soil moisture can play contrasting roles. In a March–April 2023 MJO event, evaporation over the Maritime Continent peaked ahead of convective maximum and declined during active convection, while soil moisture remained elevated.</dd>
-            <dt>Status</dt>
-            <dd>Manuscript in development. Presented at the 37th Conference on Hurricanes and Tropical Meteorology (AMS, 2026).</dd>
-          </dl>
-        </article>
-
-        <article class="highlight">
-          <div class="highlight-head">
-            <h3>Topography and precipitation variability across the Maritime Continent</h3>
-            <span class="pub-badge badge-prep">In development</span>
-          </div>
-          <div class="highlight-tags">
-            <span class="tag">IMERG</span><span class="tag">ETOPO1</span><span class="tag">ERA5-Land</span>
-            <span class="tag">Spectral analysis</span><span class="tag">MGWR</span>
-          </div>
-          <div class="highlight-placeholder" aria-label="Placeholder for project image">Image placeholder</div>
-          <dl class="highlight-details">
-            <dt>Question</dt>
-            <dd>How do elevation, slope, distance from coast, and wind exposure shape precipitation variability across time scales, and how does that connect to the MJO barrier effect?</dd>
-            <dt>Approach</dt>
-            <dd>Fourier spectral analysis of IMERG precipitation combined with multiscale geographically weighted regression (MGWR), allowing precipitation–terrain relationships to vary spatially.</dd>
-            <dt>Status</dt>
-            <dd>Manuscript in development.</dd>
-          </dl>
-        </article>
-
-        <article class="highlight">
-          <div class="highlight-head">
-            <h3>Insolation and the diurnal cycle of tropical convection</h3>
-            <span class="pub-badge badge-prep">Ongoing</span>
-          </div>
-          <div class="highlight-tags">
-            <span class="tag">WRF single-column model</span><span class="tag">Idealized modeling</span>
-            <span class="tag">Land-surface processes</span>
-          </div>
-          <div class="highlight-placeholder" aria-label="Placeholder for project image">Image placeholder</div>
-          <dl class="highlight-details">
-            <dt>Question</dt>
-            <dd>How do daylight duration and insolation amplitude control the diurnal cycle of tropical convection, and how do land-surface energy and moisture constraints alter the response?</dd>
-            <dt>Approach</dt>
-            <dd>Idealized WRF single-column experiments varying insolation while holding other factors fixed to isolate each effect.</dd>
-            <dt>Status</dt>
-            <dd>Ongoing.</dd>
-          </dl>
-        </article>
-
-        <article class="highlight">
-          <div class="highlight-head">
-            <h3>Land–sea breezes over small tropical islands</h3>
-            <span class="pub-badge badge-prep">Ongoing</span>
-          </div>
-          <div class="highlight-tags">
-            <span class="tag">Idealized WRF</span><span class="tag">2D + single-column</span><span class="tag">FAIR workflows</span>
-          </div>
-          <div class="highlight-placeholder" aria-label="Placeholder for project image">Image placeholder</div>
-          <dl class="highlight-details">
-            <dt>Question</dt>
-            <dd>How does land–sea-breeze circulation interact with convection over small tropical islands, and which idealized configurations are most useful?</dd>
-            <dt>Approach</dt>
-            <dd>Idealized high-resolution WRF simulations comparing single-column and two-dimensional setups as process-oriented tools, with reproducible and shareable workflows.</dd>
-            <dt>Outputs</dt>
-            <dd>Presented at the 2025 AGU Fall Meeting (NSF-funded). Co-author on a land–sea-breeze detection review (<em>Surveys in Geophysics</em>, under review) and an AMS 2025 deep-learning detection study.</dd>
-          </dl>
-        </article>
-
-        <article class="highlight">
-          <div class="highlight-head">
-            <h3>Intraseasonal oscillations of the Andaman Sea thermocline</h3>
-            <span class="pub-badge badge-accepted">Published</span>
-          </div>
-          <div class="highlight-tags">
-            <span class="tag">Moored buoy</span><span class="tag">MOM4p1</span><span class="tag">Satellite altimetry</span>
-            <span class="tag">Wavelet analysis</span>
-          </div>
-          <div class="highlight-placeholder" aria-label="Placeholder for project image">Image placeholder</div>
-          <dl class="highlight-details">
-            <dt>Question</dt>
-            <dd>What drives intraseasonal variability in Andaman Sea thermal structure?</dd>
-            <dt>Approach</dt>
-            <dd>Hourly buoy temperature profiles (10.5°N, 94°E), model simulations, and satellite altimetry using QA/QC, spectral, wavelet, cross-wavelet, and wave-tracking analyses.</dd>
-            <dt>What I found</dt>
-            <dd>Subsurface temperature shows strong 40–110-day oscillations decoupled from the mixed layer (90–120-day dominant period), with seasonal and interannual modulation.</dd>
-            <dt>Paper</dt>
-            <dd><strong>Vasu &amp; Vinayachandran (2023)</strong>, <em>Deep-Sea Research Part II</em>, 212. <a href="https://doi.org/10.1016/j.dsr2.2023.105337" target="_blank" rel="noopener">doi.org/10.1016/j.dsr2.2023.105337</a></dd>
-          </dl>
-        </article>
-
-        <article class="highlight">
-          <div class="highlight-head">
-            <h3>Collaborative studies</h3>
-          </div>
-          <div class="highlight-placeholder" aria-label="Placeholder for project image">Image placeholder</div>
-          <dl class="highlight-details">
-            <dt>Soil moisture in models</dt>
-            <dd>Contributing author on a benchmark of Earth system model soil moisture and ecohydrologic relationships (Massoud et al., 2026, <em>Geoscientific Model Development</em>).</dd>
-            <dt>Compound hazards</dt>
-            <dd>Contributing author on a multi-institution study of soil moisture in compound hazards (Li et al., 2026, <em>Nature Geoscience</em>).</dd>
-            <dt>Ocean mass and polar motion</dt>
-            <dd>Co-author on work linking MJO winds to an intraseasonal Indian–Pacific ocean-mass see-saw affecting Earth’s polar motion (Afroosa et al., 2021, <em>Communications Earth &amp; Environment</em>).</dd>
-            <dt>Community review</dt>
-            <dd>Contributing author on a review of tropical soil moisture–convection interactions (proposal accepted by <em>Reviews of Geophysics</em>; manuscript in development).</dd>
-          </dl>
-        </article>
-
-        <article class="highlight">
-          <div class="highlight-head">
-            <h3>Looking ahead: terrestrial hydrological memory and S2S predictability</h3>
-            <span class="pub-badge badge-submitted">Proposed</span>
-          </div>
-          <div class="highlight-placeholder" aria-label="Placeholder for project image">Image placeholder</div>
-          <dl class="highlight-details">
-            <dt>Question</dt>
-            <dd>When does land-surface memory carry useful predictive information for subseasonal atmospheric variability, and how does it interact with oceanic memory?</dd>
-            <dt>Approach</dt>
-            <dd>CESM2 subseasonal reforecasts with land, ocean, and atmosphere component-initialization experiments, global moisture tracking, and regional simulations with water-vapor tracers over the Maritime Continent.</dd>
-          </dl>
-        </article>
       </div>
     </section>
 
@@ -661,6 +492,175 @@
           </li>
 
         </ul>
+      </div>
+    </section>
+
+    <!-- RESEARCH HIGHLIGHTS -->
+    <section id="research-highlights">
+      <div class="section-header">
+        <div class="section-icon" aria-hidden="true"><i class="fa-solid fa-lightbulb"></i></div>
+        <h2>Research Highlights</h2>
+      </div>
+      <div class="section-body">
+        <p class="highlights-intro">
+          What I study, how I study it, and where each project stands. Papers and talks are listed under
+          Publications and Conference Presentations.
+        </p>
+
+        <article class="highlight">
+          <div class="highlight-head">
+            <h3>Soil moisture and the MJO over the Maritime Continent</h3>
+            <span class="pub-badge badge-review">Under review</span>
+          </div>
+          <div class="highlight-tags">
+            <span class="tag">SMAP</span><span class="tag">IMERG</span><span class="tag">GLEAM</span>
+            <span class="tag">ERA5-Land</span><span class="tag">RMM index</span>
+          </div>
+          <div class="highlight-placeholder" aria-label="Placeholder for project image">Image placeholder</div>
+          <dl class="highlight-details">
+            <dt>Question</dt>
+            <dd>How does soil moisture vary over the Maritime Continent from diurnal to intraseasonal time scales, and how does that variability relate to MJO rainfall?</dd>
+            <dt>Approach</dt>
+            <dd>Satellite soil moisture (SMAP) and precipitation (IMERG), combined with ERA5-Land and GLEAM products. Diagnostics include statistical, spectral, EOF, regression, lagged-correlation, and MJO-phase composites.</dd>
+            <dt>What I found</dt>
+            <dd>Soil moisture has strong intraseasonal variability linked to the MJO, with rainfall relationships that change by phase and environment. On diurnal scales, soil moisture peaks in early morning and declines through midday ahead of the afternoon rainfall peak, indicating antecedent soil moisture can shape convection timing and intensity.</dd>
+            <dt>Status</dt>
+            <dd>Submitted to <em>Journal of Geophysical Research: Atmospheres</em> (July 2026). Presented at the 105th AMS Annual Meeting, NCAR S2S Predictability Workshop, and RUBISCO Soil Moisture Working Group.</dd>
+          </dl>
+        </article>
+
+        <article class="highlight">
+          <div class="highlight-head">
+            <h3>Terrestrial evaporation and MJO propagation</h3>
+            <span class="pub-badge badge-prep">In development</span>
+          </div>
+          <div class="highlight-tags">
+            <span class="tag">GLEAM</span><span class="tag">MJO RMM indices</span><span class="tag">Regression diagnostics</span>
+          </div>
+          <div class="highlight-placeholder" aria-label="Placeholder for project image">Image placeholder</div>
+          <dl class="highlight-details">
+            <dt>Question</dt>
+            <dd>What roles do land evaporation and soil moisture play as the MJO propagates across the Maritime Continent, and do they act differently?</dd>
+            <dt>Approach</dt>
+            <dd>Evaporation variability from GLEAM is quantified and related to MJO convection by phase using regression and process-oriented diagnostics alongside soil moisture analyses.</dd>
+            <dt>What I found</dt>
+            <dd>Evaporation and soil moisture can play contrasting roles. In a March–April 2023 MJO event, evaporation over the Maritime Continent peaked ahead of convective maximum and declined during active convection, while soil moisture remained elevated.</dd>
+            <dt>Status</dt>
+            <dd>Manuscript in development. Presented at the 37th Conference on Hurricanes and Tropical Meteorology (AMS, 2026).</dd>
+          </dl>
+        </article>
+
+        <article class="highlight">
+          <div class="highlight-head">
+            <h3>Topography and precipitation variability across the Maritime Continent</h3>
+            <span class="pub-badge badge-prep">In development</span>
+          </div>
+          <div class="highlight-tags">
+            <span class="tag">IMERG</span><span class="tag">ETOPO1</span><span class="tag">ERA5-Land</span>
+            <span class="tag">Spectral analysis</span><span class="tag">MGWR</span>
+          </div>
+          <div class="highlight-placeholder" aria-label="Placeholder for project image">Image placeholder</div>
+          <dl class="highlight-details">
+            <dt>Question</dt>
+            <dd>How do elevation, slope, distance from coast, and wind exposure shape precipitation variability across time scales, and how does that connect to the MJO barrier effect?</dd>
+            <dt>Approach</dt>
+            <dd>Fourier spectral analysis of IMERG precipitation combined with multiscale geographically weighted regression (MGWR), allowing precipitation–terrain relationships to vary spatially.</dd>
+            <dt>Status</dt>
+            <dd>Manuscript in development.</dd>
+          </dl>
+        </article>
+
+        <article class="highlight">
+          <div class="highlight-head">
+            <h3>Insolation and the diurnal cycle of tropical convection</h3>
+            <span class="pub-badge badge-prep">Ongoing</span>
+          </div>
+          <div class="highlight-tags">
+            <span class="tag">WRF single-column model</span><span class="tag">Idealized modeling</span>
+            <span class="tag">Land-surface processes</span>
+          </div>
+          <div class="highlight-placeholder" aria-label="Placeholder for project image">Image placeholder</div>
+          <dl class="highlight-details">
+            <dt>Question</dt>
+            <dd>How do daylight duration and insolation amplitude control the diurnal cycle of tropical convection, and how do land-surface energy and moisture constraints alter the response?</dd>
+            <dt>Approach</dt>
+            <dd>Idealized WRF single-column experiments varying insolation while holding other factors fixed to isolate each effect.</dd>
+            <dt>Status</dt>
+            <dd>Ongoing.</dd>
+          </dl>
+        </article>
+
+        <article class="highlight">
+          <div class="highlight-head">
+            <h3>Land–sea breezes over small tropical islands</h3>
+            <span class="pub-badge badge-prep">Ongoing</span>
+          </div>
+          <div class="highlight-tags">
+            <span class="tag">Idealized WRF</span><span class="tag">2D + single-column</span><span class="tag">FAIR workflows</span>
+          </div>
+          <div class="highlight-placeholder" aria-label="Placeholder for project image">Image placeholder</div>
+          <dl class="highlight-details">
+            <dt>Question</dt>
+            <dd>How does land–sea-breeze circulation interact with convection over small tropical islands, and which idealized configurations are most useful?</dd>
+            <dt>Approach</dt>
+            <dd>Idealized high-resolution WRF simulations comparing single-column and two-dimensional setups as process-oriented tools, with reproducible and shareable workflows.</dd>
+            <dt>Outputs</dt>
+            <dd>Presented at the 2025 AGU Fall Meeting (NSF-funded). Co-author on a land–sea-breeze detection review (<em>Surveys in Geophysics</em>, under review) and an AMS 2025 deep-learning detection study.</dd>
+          </dl>
+        </article>
+
+        <article class="highlight">
+          <div class="highlight-head">
+            <h3>Intraseasonal oscillations of the Andaman Sea thermocline</h3>
+            <span class="pub-badge badge-accepted">Published</span>
+          </div>
+          <div class="highlight-tags">
+            <span class="tag">Moored buoy</span><span class="tag">MOM4p1</span><span class="tag">Satellite altimetry</span>
+            <span class="tag">Wavelet analysis</span>
+          </div>
+          <div class="highlight-placeholder" aria-label="Placeholder for project image">Image placeholder</div>
+          <dl class="highlight-details">
+            <dt>Question</dt>
+            <dd>What drives intraseasonal variability in Andaman Sea thermal structure?</dd>
+            <dt>Approach</dt>
+            <dd>Hourly buoy temperature profiles (10.5°N, 94°E), model simulations, and satellite altimetry using QA/QC, spectral, wavelet, cross-wavelet, and wave-tracking analyses.</dd>
+            <dt>What I found</dt>
+            <dd>Subsurface temperature shows strong 40–110-day oscillations decoupled from the mixed layer (90–120-day dominant period), with seasonal and interannual modulation.</dd>
+            <dt>Paper</dt>
+            <dd><strong>Vasu &amp; Vinayachandran (2023)</strong>, <em>Deep-Sea Research Part II</em>, 212. <a href="https://doi.org/10.1016/j.dsr2.2023.105337" target="_blank" rel="noopener">doi.org/10.1016/j.dsr2.2023.105337</a></dd>
+          </dl>
+        </article>
+
+        <article class="highlight">
+          <div class="highlight-head">
+            <h3>Collaborative studies</h3>
+          </div>
+          <div class="highlight-placeholder" aria-label="Placeholder for project image">Image placeholder</div>
+          <dl class="highlight-details">
+            <dt>Soil moisture in models</dt>
+            <dd>Contributing author on a benchmark of Earth system model soil moisture and ecohydrologic relationships (Massoud et al., 2026, <em>Geoscientific Model Development</em>).</dd>
+            <dt>Compound hazards</dt>
+            <dd>Contributing author on a multi-institution study of soil moisture in compound hazards (Li et al., 2026, <em>Nature Geoscience</em>).</dd>
+            <dt>Ocean mass and polar motion</dt>
+            <dd>Co-author on work linking MJO winds to an intraseasonal Indian–Pacific ocean-mass see-saw affecting Earth’s polar motion (Afroosa et al., 2021, <em>Communications Earth &amp; Environment</em>).</dd>
+            <dt>Community review</dt>
+            <dd>Contributing author on a review of tropical soil moisture–convection interactions (proposal accepted by <em>Reviews of Geophysics</em>; manuscript in development).</dd>
+          </dl>
+        </article>
+
+        <article class="highlight">
+          <div class="highlight-head">
+            <h3>Looking ahead: terrestrial hydrological memory and S2S predictability</h3>
+            <span class="pub-badge badge-submitted">Proposed</span>
+          </div>
+          <div class="highlight-placeholder" aria-label="Placeholder for project image">Image placeholder</div>
+          <dl class="highlight-details">
+            <dt>Question</dt>
+            <dd>When does land-surface memory carry useful predictive information for subseasonal atmospheric variability, and how does it interact with oceanic memory?</dd>
+            <dt>Approach</dt>
+            <dd>CESM2 subseasonal reforecasts with land, ocean, and atmosphere component-initialization experiments, global moisture tracking, and regional simulations with water-vapor tracers over the Maritime Continent.</dd>
+          </dl>
+        </article>
       </div>
     </section>
 
