@@ -216,8 +216,8 @@ header.hero h2 {
 .sidebar {
   position: sticky;
   top: calc(var(--nav-h) + 16px);
-  max-height: calc(100vh - var(--nav-h) - 32px);  /* tall sidebars scroll instead of getting cut off */
-  overflow-y: auto;
+  max-height: none;
+  overflow-y: visible;
   display: flex;
   flex-direction: column;
   gap: 20px;
