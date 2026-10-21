@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gallery – Sreedevi Puthiyamadam Vasu</title>
+  <meta name="description" content="Figures, field moments and model output from research on the Madden-Julian Oscillation, soil moisture and precipitation over the Maritime Continent." />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    /* Gallery-only styles. Colors and fonts come from style.css tokens. */
+    .g-head { background: linear-gradient(135deg, var(--navy) 0%, var(--teal-dk) 70%, var(--teal) 100%);
+      color: var(--white); text-align: center; padding: 44px 20px 70px; }
+    .g-head h1 { font-size: 2rem; font-weight: 700; letter-spacing: .4px; margin-bottom: 6px; }
+    .g-head p { font-size: 1rem; opacity: .92; max-width: 640px; margin: 0 auto; }
+
+    .g-wrap { max-width: 1080px; margin: -44px auto 0; padding: 0 20px 24px; position: relative; z-index: 2; }
+
+    /* ---- Stage: the animated slideshow ---- */
+    .stage { position: relative; aspect-ratio: 16 / 9; background: var(--navy); border-radius: var(--radius);
+      overflow: hidden; box-shadow: var(--shadow); }
+    .stage .slide { position: absolute; inset: 0; margin: 0; opacity: 0; transition: opacity 1.3s ease; }
+    .stage .slide.on { opacity: 1; }
+    .stage .slide img { width: 100%; height: 100%; object-fit: cover; transform: scale(1); transition: transform 10s ease-out; }
+    .stage .slide.contain img { object-fit: contain; background: #fff; }
+    .stage .slide.on:not(.contain) img { transform: scale(1.09); }   /* slow zoom on photos only */
+    .stage figcaption { position: absolute; left: 0; right: 0; bottom: 0; padding: 56px 22px 18px; color: var(--white);
+      font-size: .95rem; line-height: 1.5; background: linear-gradient(transparent, rgba(23, 50, 77, .9)); }
+    .stage .slide.contain figcaption { background: rgba(23, 50, 77, .88); padding: 12px 22px; }
+    .ctl { position: absolute; z-index: 3; border: 0; cursor: pointer; color: var(--white); background: rgba(23, 50, 77, .6); transition: background .2s; }
+    .ctl:hover { background: rgba(23, 50, 77, .9); }
+    .ctl.nav { top: 50%; transform: translateY(-50%); width: 42px; height: 42px; border-radius: 50%; font-size: 1rem; }
+    .ctl.prev { left: 12px; } .ctl.next { right: 12px; }
+    .ctl.pause { top: 12px; right: 12px; border-radius: 14px; padding: 4px 12px; font: 600 .75rem var(--font-sans); }
+    .count { position: absolute; z-index: 3; top: 12px; left: 12px; background: rgba(23, 50, 77, .6); color: var(--white);
+      border-radius: 14px; padding: 4px 12px; font-size: .75rem; font-weight: 600; }
+    .progress { position: absolute; z-index: 3; left: 0; bottom: 0; height: 3px; width: 0; background: var(--teal); }
+    .progress.run { animation: fill var(--dur, 6s) linear forwards; }
+    @keyframes fill { to { width: 100%; } }
+
+    /* ---- Thumbnail wall ---- */
+    .g-sub { font-size: .85rem; font-weight: 700; color: var(--teal-dk); text-transform: uppercase; letter-spacing: .8px;
+      margin: 34px 0 12px; padding-bottom: 4px; border-bottom: 1px dashed var(--border); }
+    .wall { column-count: 3; column-gap: 14px; }
+    .wall button { display: block; width: 100%; margin: 0 0 14px; padding: 0; border: 1px solid var(--border); background: var(--white);
+      border-radius: 8px; overflow: hidden; cursor: zoom-in; break-inside: avoid; box-shadow: var(--shadow); position: relative; }
+    .wall img { display: block; width: 100%; height: auto; transition: transform .35s ease; }
+    .wall button:hover img { transform: scale(1.04); }
+    .wall button:hover { border-color: var(--teal); }
+    .wall .cap { position: absolute; left: 0; right: 0; bottom: 0; padding: 22px 10px 8px; text-align: left; font: 600 .78rem var(--font-sans);
+      color: var(--white); background: linear-gradient(transparent, rgba(23, 50, 77, .85)); opacity: 0; transition: opacity .25s; }
+    .wall button:hover .cap, .wall button:focus-visible .cap { opacity: 1; }
+    .empty { background: var(--white); border: 1px dashed #9BB1C2; border-radius: var(--radius); padding: 28px; text-align: center; color: var(--muted); }
+
+    /* ---- Lightbox ---- */
+    .lb { position: fixed; inset: 0; z-index: 999; display: none; flex-direction: column; align-items: center; justify-content: center;
+      background: rgba(10, 25, 40, .93); padding: 24px 64px; }
+    .lb.open { display: flex; }
+    .lb img { max-width: 100%; max-height: 78vh; border-radius: 6px; background: #fff; }
+    .lb p { color: rgba(255, 255, 255, .92); margin-top: 14px; max-width: 760px; text-align: center; font-size: .92rem; }
+    .lb .ctl { background: rgba(255, 255, 255, .16); }
+    .lb .ctl:hover { background: rgba(255, 255, 255, .3); }
+    .lb .prev { left: 12px; } .lb .next { right: 12px; }
+    .lb .close { top: 14px; right: 14px; width: 40px; height: 40px; border-radius: 50%; font-size: 1.1rem; }
+
+    nav ul li a.current { background: rgba(255, 255, 255, .16); }
+
+    @media (max-width: 860px) { .wall { column-count: 2; } }
+    @media (max-width: 560px) {
+      .wall { column-count: 1; } .stage { aspect-ratio: 4 / 3; }
+      .stage figcaption { font-size: .82rem; padding: 40px 14px 12px; }
+      .lb { padding: 24px 12px; } .lb .nav { top: auto; bottom: 14px; transform: none; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .stage .slide, .stage .slide img, .wall img { transition: none; }
+      .stage .slide.on:not(.contain) img { transform: none; }
+      .progress.run { animation: none; }
+    }
+  </style>
+</head>
+<body>
+
+<nav aria-label="Site navigation">
+  <div class="nav-inner">
+    <a class="nav-brand" href="index.html" style="text-decoration:none">S. P. Vasu</a>
+    <ul>
+      <li><a href="index.html#about">About</a></li>
+      <li><a href="index.html#education">Education</a></li>
+      <li><a href="index.html#experience">Experience</a></li>
+      <li><a href="index.html#publications">Publications</a></li>
+      <li><a href="index.html#conferences">Conferences</a></li>
+      <li><a href="index.html#workshops">Workshops</a></li>
+      <li><a href="index.html#research-highlights">Research Highlights</a></li>
+      <li><a class="current" href="gallery.html" aria-current="page">Gallery</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="g-head">
+  <h1>Research in Pictures</h1>
+  <p>Model output, satellite analyses and moments from workshops and fieldwork on the Maritime Continent and the MJO.</p>
+</header>
+
+<main class="g-wrap">
+  <div class="stage" id="stage" role="region" aria-roledescription="carousel" aria-label="Featured images" hidden>
+    <span class="count" id="count" aria-live="polite"></span>
+    <button class="ctl pause" id="pause" aria-label="Pause slideshow">Pause</button>
+    <button class="ctl nav prev" id="prev" aria-label="Previous image">&#10094;</button>
+    <button class="ctl nav next" id="next" aria-label="Next image">&#10095;</button>
+    <div class="progress" id="bar"></div>
+  </div>
+
+  <div id="empty" class="empty" hidden>
+    No images loaded yet. Add files to the <code>images</code> folder and list them in the <code>GALLERY</code> array at the bottom of this page.
+  </div>
+
+  <h2 class="g-sub" id="wall-title" hidden>All images</h2>
+  <div class="wall" id="wall"></div>
+</main>
+
+<div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="Image viewer">
+  <button class="ctl close" id="lb-close" aria-label="Close viewer">&#10005;</button>
+  <button class="ctl nav prev" id="lb-prev" aria-label="Previous image">&#10094;</button>
+  <button class="ctl nav next" id="lb-next" aria-label="Next image">&#10095;</button>
+  <img id="lb-img" alt="" />
+  <p id="lb-cap"></p>
+</div>
+
+<footer>
+  <p>&copy; 2026 Sreedevi Puthiyamadam Vasu &nbsp;|&nbsp;
+    <a href="mailto:spv2023@my.fit.edu">spv2023@my.fit.edu</a> &nbsp;|&nbsp;
+    <a href="index.html">Back to portfolio</a></p>
+</footer>
+
+<script>
+/* ============================================================
+   EDIT THIS LIST. One entry per image in the images/ folder.
+   src     path to the file
+   alt     what the image shows (for screen readers)
+   caption one or two sentences shown on the image
+   fit     optional: "contain" for plots and figures so nothing is cropped
+   Entries whose file is missing are skipped automatically.
+   ============================================================ */
+const GALLERY = [
+  { src: 'images/REPLACE-1.jpg', alt: 'Describe image 1', caption: 'MJO-phase composite of rainfall over the Maritime Continent.', fit: 'contain' },
+  { src: 'images/REPLACE-2.jpg', alt: 'Describe image 2', caption: 'Soil moisture anomalies from SMAP.', fit: 'contain' },
+  { src: 'images/REPLACE-3.jpg', alt: 'Describe image 3', caption: 'Idealized WRF sea-breeze simulation.' },
+  { src: 'images/REPLACE-4.jpg', alt: 'Describe image 4', caption: 'NCAR S2S Predictability Workshop, Boulder, 2025.' }
+];
+const SLIDE_MS = 6000;
+
+(function () {
+  const $ = id => document.getElementById(id);
+  const stage = $('stage'), wall = $('wall'), bar = $('bar'), pauseBtn = $('pause');
+  const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  let items = [], slides = [], cur = 0, timer = null, paused = reduce, lbIdx = 0;
+
+  const probe = it => new Promise(res => { const im = new Image(); im.onload = () => res(it); im.onerror = () => res(null); im.src = it.src; });
+
+  Promise.all(GALLERY.map(probe)).then(r => {
+    items = r.filter(Boolean);
+    if (!items.length) { $('empty').hidden = false; return; }
+    stage.hidden = false; $('wall-title').hidden = false;
+    items.forEach((it, n) => {
+      const fig = document.createElement('figure');
+      fig.className = 'slide' + (it.fit === 'contain' ? ' contain' : '');
+      fig.innerHTML = '<img alt="" /><figcaption></figcaption>';
+      const im = fig.querySelector('img'); im.src = it.src; im.alt = it.alt;
+      fig.querySelector('figcaption').textContent = it.caption;
+      stage.insertBefore(fig, $('count')); slides.push(fig);
+
+      const b = document.createElement('button');
+      b.setAttribute('aria-label', 'Open image ' + (n + 1) + ': ' + it.alt);
+      b.innerHTML = '<img loading="lazy" alt="" /><span class="cap"></span>';
+      const t = b.querySelector('img'); t.src = it.src;
+      b.querySelector('.cap').textContent = it.caption;
+      b.onclick = () => openLb(n);
+      wall.append(b);
+    });
+    go(0); schedule();
+  });
+
+  function go(n) {
+    cur = (n + items.length) % items.length;
+    slides.forEach((s, k) => s.classList.toggle('on', k === cur));
+    $('count').textContent = (cur + 1) + ' / ' + items.length;
+  }
+  function schedule() {
+    clearTimeout(timer); bar.classList.remove('run'); void bar.offsetWidth;
+    if (paused || items.length < 2) return;
+    bar.style.setProperty('--dur', SLIDE_MS + 'ms'); bar.classList.add('run');
+    timer = setTimeout(() => { go(cur + 1); schedule(); }, SLIDE_MS);
+  }
+  $('prev').onclick = () => { go(cur - 1); schedule(); };
+  $('next').onclick = () => { go(cur + 1); schedule(); };
+  pauseBtn.textContent = paused ? 'Play' : 'Pause';
+  pauseBtn.onclick = () => { paused = !paused; pauseBtn.textContent = paused ? 'Play' : 'Pause'; schedule(); };
+  stage.addEventListener('mouseenter', () => { clearTimeout(timer); bar.classList.remove('run'); });
+  stage.addEventListener('mouseleave', schedule);
+
+  /* Lightbox */
+  const lb = $('lb');
+  function showLb(n) {
+    lbIdx = (n + items.length) % items.length;
+    $('lb-img').src = items[lbIdx].src; $('lb-img').alt = items[lbIdx].alt;
+    $('lb-cap').textContent = items[lbIdx].caption;
+  }
+  function openLb(n) { showLb(n); lb.classList.add('open'); $('lb-close').focus(); clearTimeout(timer); }
+  function closeLb() { lb.classList.remove('open'); schedule(); }
+  $('lb-close').onclick = closeLb;
+  $('lb-prev').onclick = () => showLb(lbIdx - 1);
+  $('lb-next').onclick = () => showLb(lbIdx + 1);
+  lb.addEventListener('click', e => { if (e.target === lb) closeLb(); });
+  document.addEventListener('keydown', e => {
+    if (!lb.classList.contains('open')) return;
+    if (e.key === 'Escape') closeLb();
+    if (e.key === 'ArrowLeft') showLb(lbIdx - 1);
+    if (e.key === 'ArrowRight') showLb(lbIdx + 1);
+  });
+})();
+</script>
+
+</body>
+</html>
